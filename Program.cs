@@ -17,7 +17,7 @@ namespace agileBall_proc
             IActorRef gameSupervisor;
 
             using (var system = ActorSystem.Create("baseball-actors"))
-            using (var csv = new CachedCsvReader(new StreamReader("/home/david/git/agileBall/retro-data/2017ReallyReduced.csv"), true))
+            using (var csv = new CachedCsvReader(new StreamReader(".\\Files\\2017ReallyReduced.csv"), true))
             {
                 gameSupervisor = system.ActorOf<GameEventSupervisor>("game-super");
                 while (csv.ReadNextRecord())
